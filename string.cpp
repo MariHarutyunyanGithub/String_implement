@@ -173,7 +173,7 @@ String& String::erase_spaces()
     return *this;
 }
 
-String String::substr(size_t left, size_t right)
+String String::substr(const size_t left,const size_t right)
 {
     if (left < right && right <= m_size) {
         char* str = new char[right - left + 1];
