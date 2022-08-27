@@ -66,13 +66,14 @@ String& String::operator=(const String&& oth)
     return *this;
 }
 
-String String::operator+=(const String& oth)//////////////////////////////////?????????????????????
+String String::operator+=(const String& oth)
 {
     if (oth.m_size == 0) {
         return *this;
     }
     if (m_size == 0) {
-        return oth;
+        *this = oth;
+        return *this;
     }
     size_t old_size = m_size;
     m_size += oth.m_size;
@@ -184,4 +185,11 @@ String String::substr(const size_t left,const size_t right)
     }
     else {std::cout << "out of range." << std::endl;}
     return *this;
+}
+
+int main() {
+    String str1 {"hello"};
+    String str2 = {" World!"};
+    str1 += str2;
+    std::cout << str1 << std::endl;
 }
