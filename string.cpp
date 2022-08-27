@@ -66,7 +66,7 @@ String& String::operator=(const String&& oth)
     return *this;
 }
 
-String String::operator+=(const String& oth)
+String& String::operator+=(const String& oth)
 {
     if (oth.m_size == 0) {
         return *this;
