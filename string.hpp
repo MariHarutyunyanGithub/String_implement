@@ -13,7 +13,7 @@ class String
     public:
         String& operator=(const String&);
         String& operator=(const String&&);
-        String operator+=(const String&);
+        String& operator+=(const String&);
         char& operator[](size_t);
         const char& operator[](size_t) const;
         friend  std::ostream& operator<<(std::ostream&, const String&);
